@@ -1,0 +1,24 @@
+{
+  "name": "fishbox",
+  "version": "0.0.1",
+  "description": "Simply test emails in your automated tests",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/blakeblackshear/fishbox.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blakeblackshear/fishbox/issues"
+  },
+  "homepage": "https://github.com/blakeblackshear/fishbox",
+  "dependencies": {
+    "mailparser": "~0.4.3",
+    "fs-extra": "~0.8.1",
+    "simplesmtp": "~0.3.31"
+  }
+}
