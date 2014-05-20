@@ -12,6 +12,8 @@ store_email = (email) ->
     fse.outputJson "mail/#{recipient}/email.json", 
       subject: email.subject
       text: email.text
+    , (err) ->
+      console.error err
 
 mailparser = new MailParser()
 mailparser.on 'end', store_email
@@ -32,6 +34,10 @@ http.createServer (req, res) ->
       return
 
     fs.readFile "mail/#{uri}/email.json", 'utf8', (err, data) ->
+      if err?
+        res.writeHead 500
+        res.write err
+        res.end()
       res.writeHead 200, {'Content-Type': 'application/json'}
       res.write data
       res.end()
