@@ -1,0 +1,10 @@
+[
+  {
+    "name": "fishbox",
+    "script" : "index.coffee",
+    "instances": 4,
+    "env": {
+      "PORT": 3000
+    }
+  }
+]
