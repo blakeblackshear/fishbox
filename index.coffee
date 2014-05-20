@@ -9,7 +9,8 @@ store_email = (email) ->
   email.to.map (address) ->
     address.address.split('@').shift()
   .forEach (recipient) ->
-    fse.outputJson "mail/#{recipient}/email.json", 
+    fse.outputJson "mail/#{recipient}/email.json",
+      received: email.date 
       subject: email.subject
       text: email.text
     , (err) ->
