@@ -13,6 +13,7 @@ store_email = (email) ->
       received: email.date 
       subject: email.subject
       text: email.text
+      html: email.html
     , (err) ->
       if err?
         console.error err
