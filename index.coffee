@@ -18,11 +18,10 @@ store_email = (email) ->
       if err?
         console.error err
 
-mailparser = new MailParser()
-mailparser.on 'end', store_email
-
 smtpserver.createSimpleServer { SMTPBanner:'Fishbox' }, (req) ->
   console.log "Received email from: #{JSON.stringify(req.from)}"
+  mailparser = new MailParser()
+  mailparser.on 'end', store_email
   req.pipe mailparser
   req.accept()
 .listen(25)
